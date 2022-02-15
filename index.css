@@ -1,0 +1,567 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Baloo Chettan 2', cursive;
+   scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: .7rem;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(white ,rgb(31, 31, 73));
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(white ,rgb(240, 16, 9));
+}
+header{
+    height: 100vh;
+    width: 100vw;
+    background: url('https://c.stocksy.com/a/syv300/z9/937866.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    color: white;  
+}
+/* styling navbar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    background-color:rgba(255,255,255, .1);
+    backdrop-filter: blur(10px);
+    z-index: 200;
+}
+
+/* logo */
+.logo{
+    font-size: 1.8rem;
+    margin-left: 30px;
+    font-weight: 600;
+    color: red;
+}
+/* menu */
+.menu{
+     margin: 15px;
+}
+.menu a,.menu2 a{
+    margin-left: 3.4rem;
+    margin-right: 1.3rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    position: relative;
+    transition: all .5s linear;
+    color: rgb(248, 246, 246);
+    font-weight: 550;
+}
+.menu a:hover, .menu2 a:hover{
+    color: rgb(250, 8, 8);
+}
+.menu a::before,.menu2 a::before{
+    content: " ";
+    width: 0%;
+    height: 3px;
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+    bottom: 0;
+    transition:.4s linear;
+}
+.menu a.act::before,.menu2 a.act::before{
+    width: 100%;
+}
+.menu a:hover::before,.menu2 a:hover::before{
+    width: 100%;
+}
+.nav_btn{
+    display: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    width: 40px;
+    font-size: 2rem;
+    margin: 1.2rem;
+}
+.menu2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 620px;
+    background-color: rgb(104, 102, 99);
+    padding: 90px 20px 30px 20px;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+
+    display: none;
+}
+/* home */
+.home{
+    display: flex;
+    font-size: 1.1rem;
+    padding: 4%;
+    text-align:left;
+    justify-content:center;
+    flex-direction: column;
+    width:40rem;
+    position: absolute;
+    height: 30rem;
+    top: 23%;
+    left: 3%;
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(8px);
+    border-radius: 4%;
+    box-shadow: 10px 10px 30px rgb(34, 32, 63);
+    overflow-y: scroll;
+}
+.aboutMe{
+    padding:0% 2%;
+    font-size: 1.1rem;
+}
+.sec2 button{
+    margin-bottom: 20px;
+}
+/* project section */
+.head{
+    font-size: 2.3rem;
+    padding: .2rem;
+    color: red;
+    text-align: center;  
+}
+.projects{
+    height: 125vh;
+    width: 100vw;
+    background-color: rgb(37, 36, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.container{
+    height: 113vh;
+    width: 95vw;
+    background-color: rgb(28, 28, 51);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.card{
+    height: 230px;
+    width: 400px;
+    background-color: rgb(247, 245, 243);
+    display: flex;
+    margin: 40px 20px;
+    flex-direction: column;
+    transition: .5s ;
+    cursor:pointer;
+}
+.card:hover{
+    height: 430px;
+
+}
+.img{
+    top: -50px;
+    position: relative;
+}
+.img img{
+    height: 240px;
+    width: 350px; 
+}
+.content{
+    margin-top: -150px;
+     transition: .3s ;
+     visibility: hidden;
+     color: rgb(26, 21, 21);
+     padding:5px;
+}
+.project_preview{
+    border: 2px solid rgb(247, 8, 8);
+    color: black;
+    text-decoration: none;
+    border-radius: 0px 15px;
+    padding: 4px;
+    box-shadow: 5px 5px 6px rgb(28, 28, 51);
+    transition: background-color 0.4s linear;
+    font-weight: bold;
+}
+.project_preview:hover{
+    background-color: red;
+    border: 2px solid black;
+}
+.card:hover .content{
+    visibility: visible;
+    margin-top: -20px;
+    transition-delay: .2s;
+}
+ /* .skill */
+.head2{
+     margin: 4rem 0rem 2rem 0rem;
+     letter-spacing: 1px;
+     font-size: 1.9rem;
+}
+.skillAndAbout{
+     height: 85vh;
+     width: 100vw;
+     background-color: rgb(234, 234, 248);
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column; 
+ }
+ .skillAndAbout::before{
+     content: " ";
+     position: absolute;
+     background: linear-gradient(rgb(40, 40, 70),rgb(31, 19, 77));
+     clip-path: circle(20% at 90% 90%);
+     height: 85%;
+     width: 100%;
+ }
+ .glass{
+     display: flex;
+     justify-content: space-around;
+     height: 75vh;
+     width: 90vw;
+     flex-wrap: wrap;
+     background-color: rgba(80, 80, 68, 0.4);
+     align-items: center;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding: 5px;
+    overflow-x: hidden;
+ }
+ .box1{
+     height: 375px;
+     width: 420px;
+     background-color: #808080;
+     border-radius: 6px;
+     box-shadow: 9px 9px 20px rgb(90, 81, 81);
+     border-top: 1px solid rgb(82, 80, 80);
+     border-left: 1px solid rgb(82, 80, 80) ;
+     margin: 0px 10px 20px 10px;
+ }
+ .box2{
+    height: 375px;
+    width: 420px;
+    background-color: grey;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 9px 9px 20px rgb(90, 81, 81);
+    border-top: 1px solid rgb(82, 80, 80);
+    border-left: 1px solid rgb(82, 80, 80) ;
+    margin: 0px 10px 20px 10px;
+}
+.skillN{
+    margin: 20px 10px 0px 10px;
+    display: flex; 
+} 
+.skillN h4{
+    margin-right:350px;
+    margin-top: 8px;
+} 
+.bar{
+    width: 360px;
+    height: 12px;
+    background-color: rgb(252, 237, 237);
+    border: .2px solid black;
+    border-radius: 5px;
+    display: flex;
+} 
+.progress{
+    height: 100%;
+    background: linear-gradient(90deg,red,rgb(84, 84, 136),rgb(26, 26, 53));
+    border-radius: 5px;
+    animation: anim 2s ease-in-out forwards;
+}
+.abc h4{
+    width: 200px;
+}
+@keyframes anim {
+    0%{
+        width: 0;
+    }
+} 
+ h3{
+    margin-top:-15px;
+    visibility: hidden;
+    animation: perc 2s 2s forwards;
+} 
+@keyframes perc {
+    100%{
+        visibility: visible;
+    }
+}
+/* professional skills   */
+ .skillp{ 
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+svg{
+    height: 65%;
+    width: 55%;
+}
+/* contact  */
+.contactpage{
+    height: 90vh;
+    width: 100vw;
+    background-color: rgb(37, 36, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    color: white;
+}
+.container2{
+    height: 80vh;
+    width: 95vw;
+    background-color: rgb(28, 28, 51);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     overflow-y: scroll;
+     overflow-x: hidden;
+}
+.form1{
+    height: 400px;
+    width: 700px;
+    display: flex;
+    align-items: center; 
+     justify-content: center;
+}
+.forminput{
+    margin: 15px;
+    width: 500px;
+    font-size: 1.3rem;
+    height: 40px;
+}
+input{
+    height: 15px;
+    width: 350px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 13px;
+}
+.cont{
+    display: flex;
+    height: 350px;
+    width: 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.mydetails{
+    height: 370px;
+    width: 450px;
+}
+.detail{
+    text-align: left;
+}
+.name,.add,.mail{
+    margin: 5%;
+    font-size: 1.4rem;
+}
+.btn{
+    background-color: red;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    width: 160px;
+    cursor: pointer;
+    transition: all .4s linear;
+    border: none;
+    margin-top: 5%;
+}
+.btn:hover{
+    background-color: white;
+    width: 165px;
+    color: red;
+    box-shadow: 5px 5px 150px rgb(248, 6, 6);
+}
+.form2{
+    height: 400px;
+    width: 80px;
+}
+.socialM{
+    height: 350px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+li{
+    list-style: none;
+    margin: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+ .icons a{
+    display: flex;
+    height: 50px;
+    border-radius: 6px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    box-shadow: 0 25px 35px rgb(46, 46, 73);
+    transition: all .1s linear;
+} 
+.icons a:hover{
+    font-size: 45px;
+    width: 55px;
+    height: 55px;
+}
+a.facebook{
+    background:linear-gradient(200deg,rgb(81, 81, 245),rgb(81,40,245),blue);
+}
+a.twitter{
+    background-color: rgb(101, 110, 238);
+}
+a.linkedin{
+    background-color: blue;
+}
+a.instagram{
+    background:linear-gradient(220deg,rgb(188, 70, 235),red,orange);
+}
+a.github{
+    background-color: black;
+}
+/* footer  */
+footer{
+    background-color: black;
+    height: 5vh;
+    width: 100vw;
+    color: white;
+    text-align: center;
+}
+
+
+/* media query */
+ @media only screen and (max-width:668px) { 
+    .home{
+        width: 25rem;
+        height: 27rem;
+    }
+    .box1,.box2{
+        height: 375px;
+        width: 385px; 
+   }
+   .bar{
+    width: 320px;
+    height: 11px;
+   }
+   
+   
+}
+@media only screen and (max-width:415px) {
+    .home{
+        width: 18rem;
+        height: 31rem;
+    }
+}
+@media only screen and (max-width:613px) {
+    .socialM{
+        flex-direction: row;
+        height: 50px;
+        margin-left: 25px;
+
+    }
+    .form2{
+        height: 100px;
+    }
+}
+@media only screen and (max-width:484px) {
+    .forminput{
+        margin: 20px;
+        width: 300px;
+        font-size: 1.1rem;
+        height: 30px;
+    }
+    input{
+        height: 10px;
+        width: 200px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        padding: 13px;
+    }
+    .mydetails{
+        height: 370px;
+        width: 350px;
+    }
+    .detail{
+        text-align: center;
+    }
+    
+   
+}
+@media only screen and (max-width:447px) { 
+    
+    .box1,.box2{
+        height: 375px;
+        width: 270px; 
+   }
+   .bar{
+    width: 250px;
+    height: 10px;
+   }
+   svg{
+    height: 75%;
+    width: 80%;
+}
+
+   
+}
+@media only screen and (max-width:916px) {
+     .menu a{ 
+        margin-left: 2.3rem;
+        margin-right: 0.7rem;
+        font-size: 1.1rem; 
+    }
+}
+@media only screen and (max-width:730px) {
+    .menu a{
+        display: none;
+    }
+    .nav_btn{
+        display: inline-flex;
+    }
+    .logo{
+        font-size: 1.6rem;
+    }
+    
+}
